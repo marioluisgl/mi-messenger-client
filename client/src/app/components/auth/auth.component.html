@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="container">
+        <div class="login col-4 offset-4" *ngIf = "show">
+            <h1>Login</h1>
+            <hr>
+            <form (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
+                <div class="form-group">   
+                  
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Enter your name" formControlName="name" autocomplete="off">
+                    <div class="alert alert-danger feedback" *ngIf="!loginForm.controls['name'].valid && (loginForm.controls['name'].dirty || loginForm.controls['name'].touched)">
+                        <span *ngIf="loginForm.controls['name'].errors.required">
+                            Name is required
+                        </span>
+                    </div>
+
+                </div>
+                
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter your Password" formControlName="password">
+                    <div class="alert alert-danger feedback" *ngIf="!loginForm.controls['password'].valid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+                        <span *ngIf="loginForm.controls['password'].errors.required">
+                            Password is invalid
+                        </span>
+                      
+                    </div>
+                </div>
+                <div class="alert alert-danger feedback" *ngIf="loginError">
+                    Inavlid Username Password combination.
+                </div>
+                   
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" [disabled]="!loginForm.valid">Login</button>
+                </div>
+
+                <a>Forgot your password?</a>
+                
+                        
+                <div>
+                    <span style="cursor: pointer">
+                        Don't have an account ?                          
+                    </span>                    
+
+                    <span (click) = "showRegister()" style="cursor: pointer">
+                        Register                            
+                    </span>
+                </div>
+           
+            </form>
+        </div>
+
+
+        <div class="register col-4 offset-4" *ngIf = "!show">
+            <h1>Register</h1>
+            <hr>
+            <form (ngSubmit)="register()" [formGroup]="registerForm" novalidate>
+                <div class="form-group">   
+                    
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Enter your name" formControlName="name" autocomplete="off">
+                    <div class="alert alert-danger feedback" *ngIf="!registerForm.controls['name'].valid && (registerForm.controls['name'].dirty || registerForm.controls['name'].touched)">
+                        <span *ngIf="registerForm.controls['name'].errors.required">
+                            Name is required
+                        </span>
+                    </div>
+
+                </div>
+                
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter your Password" formControlName="password">
+                    <div class="alert alert-danger feedback" *ngIf="!registerForm.controls['password'].valid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)">
+                        <span *ngIf="registerForm.controls['password'].errors.required">
+                            Password is required
+                        </span>
+                        
+                    </div>
+                </div>
+                    
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" [disabled]="!registerForm.valid">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+
+/**************Navbar styles start********************/
+.bg-bippid {
+    background-color: #690505 !important;
+}
+.dropdown-menu-left {
+    right: 0 !important;
+    left: auto !important;
+    margin-top: 12px !important;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #e9ecef !important;
+}
+
+.navbar-light .navbar-brand {
+    color: #e9ecef !important;
+}
+/***************navbar styles end***********************/
+
+
+/***************home styles start***********************/
+.jumbotron{
+    padding: 25px !important;
+    margin-top: 10px !important;
+	border-radius: 5px !important;
+	text-align: center;
+}
+
+/***************home styles end***********************/
+
+.chat-list{
+    border-right: 1px solid rgba(0,0,0,.1);
+}
