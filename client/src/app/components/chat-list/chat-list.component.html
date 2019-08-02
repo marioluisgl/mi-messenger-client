@@ -1,4 +1,9 @@
-<div class="chat-list--users">
-    <p>chat-list works!</p>
+<ul class="user-list">
+    <li *ngFor="let user of chatListUsers">
+        {{ user.name}}
+        <span [ngClass]="user.online === true ? 'online' : 'offline'"> </span>
+    </li>
+</ul>
+<div class="alert" alert-info.class="!loading" *ngIf='chatListUsers.length === 0'>
+    {{ loading && chatListUsers.length === 0 ? 'Loading your chat list.' : 'No User Avilable to chat.'}}
 </div>
-
